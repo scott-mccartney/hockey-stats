@@ -3,6 +3,10 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.home-route {
+  text-decoration: none;
+  color: white;
+}
 .toolbar-icon {
   padding: 0 14px;
 }
@@ -27,3 +31,4 @@ mat-toolbar-row {
   right: 20px;
   color: white;
 }
+
