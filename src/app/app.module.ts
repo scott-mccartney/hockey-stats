@@ -8,14 +8,36 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticleComponent } from './components/articles/article/article.component';
+import { ArticlesListComponent } from './components/articles/articles-list/articles-list.component';
+import { Error404Component } from './components/http-status-pages/404/error-404.component';
+import { GameComponent } from './components/games/game-profile/game.component';
+import { GamesListComponent } from './components/games/games-list/games-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { PlayerComponent } from './components/player/player.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { StandingsComponent } from './components/standings/standings.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { TeamComponent } from './components/teams/team-profile/team.component';
+import { TeamsListComponent } from './components/teams/teams-list/teams-list.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ArticleComponent,
+    ArticlesListComponent,
+    Error404Component,
+    GameComponent,
+    GamesListComponent,
     HomeComponent,
-    SettingsComponent
+    PlayerComponent,
+    SettingsComponent,
+    StatsComponent,
+    StandingsComponent,
+    TeamComponent,
+    TeamsListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
