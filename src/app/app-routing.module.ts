@@ -18,25 +18,16 @@ import { UserComponent } from './components/user/user.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'articles', component: ArticlesListComponent },
-  { path: 'games', component: GamesListComponent, children: [
-    { path: ':gameid', component: GameComponent }
-  ]},
-  { path: 'player', children: [
-    { path: ':playerid', component: PlayerComponent }
-  ]},
+  { path: 'games', component: GamesListComponent },
+  { path: 'games/:gameid', component: GameComponent },
+  { path: 'player/:playerid', component: PlayerComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'standings', component: StandingsComponent },
   { path: 'stats', component: StatsComponent },
-  { path: 'teams', component: TeamsListComponent, children: [
-    { path: ':teamname', component: TeamComponent }]
-  },
-  { path: 'user', children: [
-    { path: ':username', component: UserComponent, children: [
-      { path: 'article', children: [
-        { path: ':articleid', component: ArticleComponent }]
-      }
-    ]}
-  ]},
+  { path: 'teams', component: TeamsListComponent },
+  { path: 'teams/:teamname', component: TeamComponent },
+  { path: 'user/:username', component: UserComponent },
+  { path: 'user/:username/article/:articleid', component: ArticleComponent },
   { path: '**', component: Error404Component }
 ];
 
