@@ -1,6 +1,14 @@
-<mat-card>
-  <mat-card-title>Player {{ player.id }}: {{ player.name }}</mat-card-title>
-  <h1>Birth Date</h1> {{ player.birthDate }}
+<!-- Player Bio Component -->
+<mat-card *ngIf="pageLoaded">
+  <mat-card-title>{{ player.name }}</mat-card-title>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">Birth Date: {{ player.birthDate | date }}</mat-list-item>
+    <mat-list-item role="listitem">Birth Place: {{ player.birthCity }},
+      {{ player.birthStateProv}}, {{ player.birthCountry }}</mat-list-item>
+    <mat-list-item role="listitem">Gender: {{ player.gender }}</mat-list-item>
+  </mat-list>
+
   <button mat-raised-button color="primary">
     Primary
   </button>
@@ -10,4 +18,18 @@
   <button mat-raised-button color="warn">
     Warning
   </button>
+</mat-card>
+
+<mat-divider></mat-divider>
+
+<!-- Stat Table Component -->
+<mat-card *ngIf="pageLoaded">
+  <mat-card-title>Table of stats goes here</mat-card-title>
+</mat-card>
+
+<mat-divider></mat-divider>
+
+<!-- Stat Chart Component -->
+<mat-card *ngIf="pageLoaded">
+  <mat-card-title>Charts go here</mat-card-title>
 </mat-card>

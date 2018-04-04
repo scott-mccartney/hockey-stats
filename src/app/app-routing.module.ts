@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'teams/:teamname', component: TeamComponent },
   { path: 'user/:username', component: UserComponent },
   { path: 'user/:username/article/:articleid', component: ArticleComponent },
+  { path: '404-not-found', component: Error404Component },
   { path: '**', component: Error404Component }
 ];
 

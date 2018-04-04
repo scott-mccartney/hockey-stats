@@ -4,7 +4,7 @@
   "position": 1,
   "birthDate": "12/26/1998",
   "birthCity": "Albuquerque",
-  "birthState": "NM",
+  "birthStateProv": "NM",
   "birthCountry": "United States",
   "gender": "Male",
   "season": [

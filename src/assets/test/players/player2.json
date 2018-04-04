@@ -4,7 +4,7 @@
   "position": 2,
   "birthDate": "1/25/2003",
   "birthCity": "Detroit",
-  "birthState": "MI",
+  "birthStateProv": "MI",
   "birthCountry": "United States",
   "gender": "Male",
   "season": [
