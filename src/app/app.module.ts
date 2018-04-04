@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes, Router } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ApiService } from './services/api.service';
+
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './components/articles/article/article.component';
 import { ArticlesListComponent } from './components/articles/articles-list/articles-list.component';
@@ -47,7 +49,7 @@ import { UserComponent } from './components/user/user.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

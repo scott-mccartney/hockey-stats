@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+
+import { Player } from '../../models/player';
 
 @Component({
   selector: 'app-player',
@@ -8,15 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlayerComponent implements OnInit {
 
-  playerID: string;
+  player = new Player('', '');
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private api: ApiService) {  }
 
   ngOnInit() {
-    this.setPlayerID(this.route.snapshot.params.playerid);
+    // Subscribe to API call for Player data, creating player with response
+    this.api.getPlayerData(this.route.snapshot.params.playerid).subscribe(res => {
+      this.player = this.createPlayer(res.json());
+    }, err => {
+      console.log(err);
+    }, () => {      // Run on both success/error when finished
+      console.log('Done');
+    });
   }
 
-  setPlayerID(id: string): void {
-    this.playerID = id;
+  private createPlayer(playerJSON: Player): Player {
+    return playerJSON;
   }
 }
