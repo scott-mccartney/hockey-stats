@@ -5,12 +5,16 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 import { MaterialModule } from '../../material.module';
 import { PlayerRoutingModule } from './player-routing.module';
-import { ApiService } from '../../services/api.service';
+import { PlayerApiService } from './services/player-api.service';
 import { PlayerComponent } from './player.component';
+import { PlayerStatsComponent } from './stats-table/player-stats.component';
+import { PlayerChartsComponent } from './charts/player-charts.component';
 
 @NgModule({
   declarations: [
-    PlayerComponent
+    PlayerComponent,
+    PlayerStatsComponent,
+    PlayerChartsComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,7 @@ import { PlayerComponent } from './player.component';
     PlayerRoutingModule,
     MaterialModule
   ],
-  providers: [ApiService],
+  providers: [PlayerApiService],
   bootstrap: [PlayerComponent]
 })
 export class PlayerModule { }

@@ -1,6 +1,6 @@
 <!-- Player Bio Component -->
 <mat-card *ngIf="pageLoaded">
-  <mat-card-title>{{ player.name }}</mat-card-title>
+  <mat-card-title>{{ player.name }}: Season {{ season }} </mat-card-title>
 
   <mat-list role="list">
     <mat-list-item role="listitem">Birth Date: {{ player.birthDate | date }}</mat-list-item>
@@ -23,13 +23,9 @@
 <mat-divider></mat-divider>
 
 <!-- Stat Table Component -->
-<mat-card *ngIf="pageLoaded">
-  <mat-card-title>Table of stats goes here</mat-card-title>
-</mat-card>
+<app-player-stats *ngIf="pageLoaded"></app-player-stats>
 
 <mat-divider></mat-divider>
 
 <!-- Stat Chart Component -->
-<mat-card *ngIf="pageLoaded">
-  <mat-card-title>Charts go here</mat-card-title>
-</mat-card>
+<app-player-charts *ngIf="pageLoaded"></app-player-charts>
