@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes, Router } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PlayerModule } from './components/player/player.module';
 import { ApiService } from './services/api.service';
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,6 @@ import { Error404Component } from './components/http-status-pages/404/error-404.
 import { GameComponent } from './components/games/game-profile/game.component';
 import { GamesListComponent } from './components/games/games-list/games-list.component';
 import { HomeComponent } from './components/home/home.component';
-import { PlayerComponent } from './components/player/player.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { StandingsComponent } from './components/standings/standings.component';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -33,7 +33,6 @@ import { UserComponent } from './components/user/user.component';
     GameComponent,
     GamesListComponent,
     HomeComponent,
-    PlayerComponent,
     SettingsComponent,
     StatsComponent,
     StandingsComponent,
@@ -47,7 +46,8 @@ import { UserComponent } from './components/user/user.component';
     HttpModule,
     MaterialModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PlayerModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

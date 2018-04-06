@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesListComponent },
   { path: 'games', component: GamesListComponent },
   { path: 'games/:gameid', component: GameComponent },
-  { path: 'player/:playerid', component: PlayerComponent },
+  { path: 'player', loadChildren: './components/player/player.module#PlayerModule' },
   { path: 'settings', component: SettingsComponent },
   { path: 'standings', component: StandingsComponent },
   { path: 'stats', component: StatsComponent },
