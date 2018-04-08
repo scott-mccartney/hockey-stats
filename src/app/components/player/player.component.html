@@ -1,30 +1,5 @@
-<!-- Player Bio Component -->
-<mat-card *ngIf="pageLoaded">
-  <mat-card-title>{{ player.name }}: Season {{ season }} </mat-card-title>
-
-  <mat-list role="list">
-    <mat-list-item role="listitem">Birth Date: {{ player.birthDate | date }}</mat-list-item>
-    <mat-list-item role="listitem">Birth Place: {{ player.birthCity }},
-      {{ player.birthStateProv}}, {{ player.birthCountry }}</mat-list-item>
-    <mat-list-item role="listitem">Gender: {{ player.gender }}</mat-list-item>
-  </mat-list>
-
-  <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
-  <!-- ; else noImageFound">
-  <ng-template #noImageFound>
-    <img src="fallbackImage.png" alt="Fallbackimage">
-  </ng-template> -->
-
-  <button mat-raised-button color="primary">
-    Primary
-  </button>
-  <button mat-raised-button color="accent">
-    Accent
-  </button>
-  <button mat-raised-button color="warn">
-    Warning
-  </button>
-</mat-card>
+<!-- Player Biography Component -->
+<app-player-bio [player]="player" [season]="season" *ngIf="pageLoaded"></app-player-bio>
 
 <mat-divider></mat-divider>
 

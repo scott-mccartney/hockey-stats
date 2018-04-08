@@ -7,12 +7,14 @@ import { MaterialModule } from '../../material.module';
 import { PlayerRoutingModule } from './player-routing.module';
 import { PlayerApiService } from './services/player-api.service';
 import { PlayerComponent } from './player.component';
+import { PlayerBioComponent } from './bio/player-bio.component';
 import { PlayerStatsComponent } from './stats-table/player-stats.component';
 import { PlayerChartsComponent } from './charts/player-charts.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
+    PlayerBioComponent,
     PlayerStatsComponent,
     PlayerChartsComponent
   ],

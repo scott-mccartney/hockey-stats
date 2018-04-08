@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PlayerApiService } from './services/player-api.service';
 
 import { Player } from '../../models/player';
+import { ViewChild } from '@angular/core/src/metadata/di';
+import { PlayerBioComponent } from './bio/player-bio.component';
 
 @Component({
   selector: 'app-player',
@@ -12,23 +14,23 @@ import { Player } from '../../models/player';
 export class PlayerComponent implements OnInit {
 
   player = this.createBlankPlayer();
+  season = 'asdf';
   pageLoaded = false;
-  season = '';
   imageToShow: any;
   isImageLoading = true;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private api: PlayerApiService) {  }
+              private api: PlayerApiService) {
+    this.player = this.createBlankPlayer();
+    this.season = this.route.snapshot.params.season;
+  }
 
   ngOnInit() {
-    this.season = this.route.snapshot.params.season;
     if (!this.season) {
       this.season = '2017-18';
     }
-
     this.loadPlayerData();
-    this.getImageFromService();
   }
 
   loadPlayerData(): void {
@@ -42,31 +44,6 @@ export class PlayerComponent implements OnInit {
         this.router.navigateByUrl('/');
       }
     }, () => { this.pageLoaded = true; });
-  }
-
-  getImageFromService() {
-    this.isImageLoading = true;
-
-    this.api.getPlayerImg(this.route.snapshot.params.playername).subscribe(res => {
-      this.createImageFromBlob(res.blob());
-      this.isImageLoading = false;
-    }, err => {
-      if (err.status === 404) {
-        console.log('Player image not found: ' + err);
-        this.isImageLoading = false;
-      }
-    });
-  }
-
-  createImageFromBlob(image: Blob) {
-     const reader = new FileReader();
-     reader.addEventListener('load', () => {
-        this.imageToShow = reader.result;
-     }, false);
-
-     if (image) {
-        reader.readAsDataURL(image);
-     }
   }
 
   private createBlankPlayer(): Player {

@@ -14,7 +14,18 @@ export class PlayerApiService {
   }
 
   getPlayerImg(name: string): Observable<any> {
-    return this.http.get('../../../../assets/test/players/' + name + '.jpg',
+
+    return this.http.get(this.nameImgLookup(name),
         { responseType: ResponseContentType.Blob });
+  }
+
+  private nameImgLookup(name: string): string {
+    if (name === 'Vladimir Tarasenko') {
+      return '../../../../assets/test/players/vladimir-tarasenko.jpg';
+    } else if (name === 'Alexander Ovechkin') {
+      return '../../../../assets/test/players/alexander-ovechkin.jpg';
+    } else {
+      return '';
+    }
   }
 }
