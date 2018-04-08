@@ -5,8 +5,8 @@ import { PlayerComponent } from './player.component';
 
 const routes: Routes = [
   { path: '', component: PlayerComponent },
-  { path: ':playerid', component: PlayerComponent },
-  { path: ':playerid/season/:season', component: PlayerComponent },
+  { path: ':playername', component: PlayerComponent },
+  { path: ':playername/season/:season', component: PlayerComponent },
   { path: '**', redirectTo: '/404-not-found' }
 ];
 

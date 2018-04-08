@@ -9,6 +9,12 @@
     <mat-list-item role="listitem">Gender: {{ player.gender }}</mat-list-item>
   </mat-list>
 
+  <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
+  <!-- ; else noImageFound">
+  <ng-template #noImageFound>
+    <img src="fallbackImage.png" alt="Fallbackimage">
+  </ng-template> -->
+
   <button mat-raised-button color="primary">
     Primary
   </button>
