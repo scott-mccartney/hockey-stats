@@ -4,7 +4,7 @@
 <mat-divider></mat-divider>
 
 <!-- Stat Table Component -->
-<app-player-stats *ngIf="pageLoaded"></app-player-stats>
+<app-player-stats [stats]="player.seasons" *ngIf="pageLoaded"></app-player-stats>
 
 <mat-divider></mat-divider>
 
