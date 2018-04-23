@@ -5,31 +5,36 @@
             The actual rendered columns are set as a property on the row definition" -->
 
       <!-- ID Column -->
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> ID </mat-header-cell>
-        <mat-cell *matCellDef="let row" class="data-cell"> {{row.id}} </mat-cell>
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Season </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.year}} </mat-cell>
       </ng-container>
 
-      <!-- Progress Column -->
+      <ng-container matColumnDef="gamesPlayed">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Games </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.gamesPlayed}} </mat-cell>
+      </ng-container>
+
+      <!-- Progress Column
       <ng-container matColumnDef="progress">
         <mat-header-cell *matHeaderCellDef class="header-cell"> Progress </mat-header-cell>
         <mat-cell *matCellDef="let row" class="data-cell"> {{row.progress}}% </mat-cell>
       </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="userName">
+       Name Column -->
+      <!-- <ng-container matColumnDef="userName">
         <mat-header-cell *matHeaderCellDef class="header-cell"> Name </mat-header-cell>
         <mat-cell *matCellDef="let row" class="data-cell"> {{row.name}} </mat-cell>
-      </ng-container>
+      </ng-container> -->
 
       <!-- Color Column -->
-      <ng-container matColumnDef="color">
+      <!-- <ng-container matColumnDef="color">
         <mat-header-cell *matHeaderCellDef class="header-cell">Color</mat-header-cell>
         <mat-cell *matCellDef="let row" class="data-cell"
                   [style.color]="row.color">
           {{row.color}}
         </mat-cell>
-      </ng-container>
+      </ng-container> -->
 
       <mat-header-row *matHeaderRowDef="displayedColumns" class="header-row"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;" class="data-row"></mat-row>

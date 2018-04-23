@@ -10,6 +10,7 @@ import { PlayerComponent } from './player.component';
 import { PlayerBioComponent } from './bio/player-bio.component';
 import { PlayerStatsComponent } from './stats-table/player-stats.component';
 import { PlayerChartsComponent } from './charts/player-charts.component';
+import { StatsDataSource } from './stats-table/data-source/stats-data-source';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PlayerChartsComponent } from './charts/player-charts.component';
     PlayerRoutingModule,
     MaterialModule
   ],
-  providers: [PlayerApiService],
+  providers: [PlayerApiService, StatsDataSource],
   bootstrap: [PlayerComponent]
 })
 export class PlayerModule { }
