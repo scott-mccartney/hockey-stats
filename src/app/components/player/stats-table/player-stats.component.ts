@@ -16,11 +16,10 @@ export class PlayerStatsComponent implements OnInit {
   stats: Array<PlayerSeason>;
   dataSource: StatsDataSource | null;
 
-  // displayedColumns = ['year', 'team', 'gamesPlayed', 'goals',
-  //                     'assists', 'points', 'plusMinus', 'ppg',
-  //                     'ppp', 'gwg', 'otg', 'shots', 'hits',
-  //                     'toi', 'corsi'];
-  displayedColumns = ['year', 'gamesPlayed'];
+  displayedColumns = ['year', 'teams', 'gamesPlayed', 'goals',
+                      'assists', 'points', 'plusMinus', 'ppg',
+                      'ppp', 'gwg', 'otg', 'shots', 'hits',
+                      'toi', 'corsi'];
 
   constructor(private api: PlayerApiService, private ds: StatsDataSource) {
     this.dataSource = ds;
