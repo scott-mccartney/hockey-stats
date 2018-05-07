@@ -1,6 +1,6 @@
 # HockeyStats
 
-Developed by Scott McCartney at Carman Technologies.
+Developed by Scott McCartney at Carman Technologies. This application serves as the user interface for the hockey stats website (URL to be determiend) that displays player/team stats and profiles with the tools to have in-depth comparisons.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
