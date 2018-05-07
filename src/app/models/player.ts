@@ -8,11 +8,27 @@ export class Player {
   birthStateProv: string;
   birthCountry: string;
   gender: string;
-  season: Array<PlayerSeason>;
+  seasons: Array<PlayerSeason>;
   games: Array<PlayerGame>;
 
-  constructor(id: string, name: string) {
+  constructor(
+      id: string,
+      name: string,
+      birthDate: Date,
+      birthCity: string,
+      birthStateProv: string,
+      gender: string,
+      seasons: Array<PlayerSeason>) {
     this.id = id;
     this.name = name;
+    this.birthDate = birthDate;
+    this.birthCity = birthCity;
+    this.birthStateProv = birthStateProv;
+    this.gender = gender;
+    this.seasons = seasons;
+  }
+
+  public setGames(games: Array<PlayerGame>): void {
+    this.games = games;
   }
 }

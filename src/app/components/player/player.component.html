@@ -1,13 +1,12 @@
-<mat-card>
-  <mat-card-title>Player {{ player.id }}: {{ player.name }}</mat-card-title>
-  <h1>Birth Date</h1> {{ player.birthDate }}
-  <button mat-raised-button color="primary">
-    Primary
-  </button>
-  <button mat-raised-button color="accent">
-    Accent
-  </button>
-  <button mat-raised-button color="warn">
-    Warning
-  </button>
-</mat-card>
+<!-- Player Biography Component -->
+<app-player-bio [player]="player" [season]="season" *ngIf="pageLoaded"></app-player-bio>
+
+<mat-divider></mat-divider>
+
+<!-- Stat Table Component -->
+<app-player-stats [stats]="player.seasons" *ngIf="pageLoaded"></app-player-stats>
+
+<mat-divider></mat-divider>
+
+<!-- Stat Chart Component -->
+<app-player-charts *ngIf="pageLoaded"></app-player-charts>

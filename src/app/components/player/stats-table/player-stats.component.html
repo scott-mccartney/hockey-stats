@@ -1,0 +1,85 @@
+<mat-card>
+  <ng-container class="stats-table-container">
+    <mat-table #table [dataSource]="dataSource" class="stats-table">
+
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Season </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.year}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="gamesPlayed">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Games </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.gamesPlayed}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="teams">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Teams </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.teams | teamListPipe}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="goals">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Goals </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.goals}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assists">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Assists </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.assists}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="points">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Points </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.points}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="plusMinus">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> +/- </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.plusMinus | plusMinusPipe}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ppg">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> PPG </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.ppg}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ppp">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> PPP </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.ppp}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="gwg">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> GWG </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.gwg}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="otg">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> OTG </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.otg}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="shots">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Shots </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.shots}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="hits">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Hits </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.hits}} </mat-cell>
+      </ng-container>
+
+      <!-- Uses Angular number pipe with a minimum of 1 integer digit and 2 decimals -->
+      <ng-container matColumnDef="toi">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> TOI </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.toi | number: '1.2-2'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="corsi">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Corsi </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell"> {{row.corsi | number: '2.2-2'}}% </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" class="header-row"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="data-row"></mat-row>
+    </mat-table>
+  </ng-container>
+</mat-card>
