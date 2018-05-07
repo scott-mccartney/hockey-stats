@@ -1,0 +1,39 @@
+* Structure */
+.stats-table-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.stats-table {
+  flex: 1 1 auto;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.header-row, .data-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  height: 32px;
+  padding: 0 8px;
+}
+
+.header-row {
+  background-color: #2196F3;
+}
+
+.data-cell, .header-cell {
+  flex: 1;
+}
+
+.header-cell {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+}
+
+.data-cell {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87);
+}

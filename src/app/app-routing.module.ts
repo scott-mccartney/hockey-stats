@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesListComponent },
   { path: 'games', component: GamesListComponent },
   { path: 'games/:gameid', component: GameComponent },
-  { path: 'player/:playerid', component: PlayerComponent },
+  { path: 'player', loadChildren: './components/player/player.module#PlayerModule' },
   { path: 'settings', component: SettingsComponent },
   { path: 'standings', component: StandingsComponent },
   { path: 'stats', component: StatsComponent },
@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'teams/:teamname', component: TeamComponent },
   { path: 'user/:username', component: UserComponent },
   { path: 'user/:username/article/:articleid', component: ArticleComponent },
+  { path: '404-not-found', component: Error404Component },
   { path: '**', component: Error404Component }
 ];
 

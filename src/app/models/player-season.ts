@@ -5,7 +5,7 @@ export class PlayerSeason {
   goals: number;
   assists: number;
   points: number;
-  team: Array<string>;
+  teams: Array<string>;
   corsi: number;
   plusMinus: number;
   ppg: number;  // Powerplay goals
@@ -23,7 +23,7 @@ export class PlayerSeason {
       goals: number,
       assists: number,
       points: number,
-      team: Array<string>,
+      teams: Array<string>,
       corsi: number,
       plusMinus: number,
       ppg: number,
@@ -39,7 +39,7 @@ export class PlayerSeason {
     this.goals = goals;
     this.assists = assists;
     this.points = points;
-    this.team = team;
+    this.teams = teams;
     this.corsi = corsi;
     this.plusMinus = plusMinus;
     this.ppg = ppg;
